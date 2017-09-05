@@ -7,9 +7,6 @@ case class Leaf(terminals: Set[Int]) extends Tree
 
 object Tree extends Tree {
 
-  implicit class RicIntersect( tree: Tree){
-    def intersect : Set[Int] = Tree.intersect(tree)
-  }
 
   def of(tree: Tree): Tree = tree
 
@@ -21,5 +18,11 @@ object Tree extends Tree {
   }
 
 
+  implicit class RichIntersect( tree: Tree){
+    def intersect : Set[Int] = Tree.intersect(tree)
+  }
+
 
 }
+
+
